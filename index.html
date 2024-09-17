@@ -12,9 +12,11 @@
     <main>
         <section>
             <div>
-                <input  type="text" placeholder="Title" class="input input-bordered input-secondary  w-full max-w-xs my-8 mx-10" /><br>
-                <textarea class="textarea w-full max-w-xs textarea-secondary mx-10" placeholder="Post"></textarea> <br>
-                <button class="btn btn-secondary my-8 mx-10">Add Post</button>
+                
+                    <input  id = "title" type="text" placeholder="Title" class="input input-bordered input-secondary  w-full max-w-xs my-8 mx-10" /><br>
+                <textarea id = "textarea" class="textarea w-full max-w-xs textarea-secondary mx-10" placeholder="Post"></textarea> <br>
+                
+                <button onclick="postText()" class="btn btn-secondary my-8 mx-10">Add Post</button>
             </div>
             <div id="post" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
                
