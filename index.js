@@ -1,7 +1,7 @@
 
 
 const allPost = async()=>{
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+    const res = await fetch('http://localhost:3000/posts')
     const data = await res.json()
     // console.log(data);
     
@@ -10,7 +10,7 @@ const allPost = async()=>{
 
 allPost()
 
-// Show post
+// Get post
 
 const postHandle = post =>{
     const postShow = document.getElementById('post')
@@ -40,7 +40,7 @@ const postHandle = post =>{
 // create post
 
 const createPost = (title,textAreas)=>{
-    fetch('https://jsonplaceholder.typicode.com/posts', {
+    fetch('http://localhost:3000/posts', {
         method: 'POST',
         body: JSON.stringify({
           title: title,
@@ -55,40 +55,6 @@ const createPost = (title,textAreas)=>{
         .then(data => console.log(data));
 }
 
-
-const allPost1st = async(userId)=>{
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts?id=${userId}`)
-    const data = await res.json()
-    postadded(data)
-    // console.log(data);
-    
-    
-}
-
-
-const postadded = data =>{
-    const postShow = document.getElementById('post')
-
-    // const post = posts.slice(0,20)
-
-    console.log(post.length);
-    
-    // post.forEach(post=>{
-        const allPost = document.createElement('p')
-
-    allPost.innerHTML = `
-                <div class="card-body">
-                  <h2 class="card-title">${data.title}</h2>
-                  <p>${data.body}</p>
-                  
-                </div>
-    `
-    postShow.appendChild(allPost)
-    
-    console.log(post)
-    // })
-
-}
 
 
 
