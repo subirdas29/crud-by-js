@@ -1,72 +1,63 @@
 
-
 const allPost = async()=>{
-    const res = await fetch('http://localhost:3000/posts')
-    const data = await res.json()
-    // console.log(data);
-    
-    postHandle(data)
+  const res = await fetch('http://localhost:3000/posts')
+  const posts = await res.json()
+  showPost(posts)
+  console.log(posts);
+  
 }
 
 allPost()
 
-// Get post
+//  Get Post
 
-const postHandle = post =>{
-    const postShow = document.getElementById('post')
+const showPost = (posts) =>{
+  const postText = document.getElementById('post')
 
-    // const post = posts.slice(0,20)
-
-    console.log(post.length);
+  posts.forEach(post =>{
     
-    post.forEach(post=>{
-        const allPost = document.createElement('p')
-
-    allPost.innerHTML = `
-                <div class="card-body">
-                  <h2 class="card-title">${post.title}</h2>
-                  <p>${post.body}</p>
-                  
-                </div>
+    const div = document.createElement('div')
+    div.innerHTML = `
+    <h1 class="text-2xl font-bold">${post.title}</h1>
+    <p>${post.body}</p>
+    <div class="mt-6 mb-12">
+      <button class="text-blue-400 mr-10">Edit</button>
+    <button class="text-blue-400">Delete</button>
+    </div>
     `
-    postShow.appendChild(allPost)
+    postText.appendChild(div)
     
-    console.log(post)
+  })
+
+}
+
+  // Add Post
+
+  const newPost = async (addTitle,addTextArea) =>{
+    const newData = {
+      title: addTitle,
+      body: addTextArea,
+      userId: 1
+    }
+   
+   const res = await fetch('http://localhost:3000/posts', {
+      method: 'POST',
+      body: JSON.stringify(newData),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
     })
+    const newPost = await res.json()
+    return newPost
+      
+  }
 
-}
+ const addText = () =>{
+  const title= document.getElementById('title')
+  const textArea = document.getElementById('textArea')
 
+  const addTitle = title.value
+  const addTextArea = textArea.value
 
-// create post
-
-const createPost = (title,textAreas)=>{
-    fetch('http://localhost:3000/posts', {
-        method: 'POST',
-        body: JSON.stringify({
-          title: title,
-          body: textAreas,
-          userId: 1,
-        }),
-        headers: {
-          'Content-type': 'application/json; charset=UTF-8',
-        },
-      })
-        .then((response) => response.json())
-        .then(data => console.log(data));
-}
-
-
-
-
-const postText=()=>{
-    const title = document.getElementById('title')
-    const textArea = document.getElementById('textarea')
-    const textTile = title.value
-    const textAreas = textArea.value
-    createPost(textTile,textAreas)
-
-}
-
-{/* <div class="card-actions justify-center">
-                    <button class="btn btn-primary" onclick="showDetails('${phone.slug}')">Show Details</button>
-                  </div> */}
+  newPost(addTitle,addTextArea)
+ }
