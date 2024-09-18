@@ -28,22 +28,12 @@
             <div>
                 <!-- Open the modal using ID.showModal() method -->
 <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
-<dialog id="editpost" class="modal modal-bottom sm:modal-middle">
+<dialog  class="modal modal-bottom sm:modal-middle" id="editpost">
     <div class="modal-box flex flex-col items-center">
         <input class="text-lg font-bold input input-bordered input-secondary  w-full my-8 max-w-xs" id="editTitle"></input>
         <textarea class="py-4 input input-bordered input-secondary  w-full max-w-xs mb-8" id="editBody"></textarea>
-        
-        <div class="flex justify-center items-center">
-            <button class="btn mr-6" onclick="newPostEdit()" id="editSubmit" >Submit</button>
-            <div class="modal-action mt-0">
-                <form method="dialog">
-                  <!-- if there is a button in form, it will close the modal -->
-                 
-                  <button class="btn">Close</button>
-                 
-                </form>
-              </div>
-        </div>
+        <div class="flex justify-center items-center" id="btn">
+            </div>
       </div>
 </dialog>
             </div>

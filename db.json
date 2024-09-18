@@ -1,16 +1,10 @@
 {
   "posts": [
     {
-      "title": "",
-      "body": "",
+      "title": "afdfaf",
+      "body": "afsdfsfd",
       "userId": 1,
       "id": "1"
-    },
-    {
-      "userId": 1,
-      "id": "2",
-      "title": "qui est esse",
-      "body": "est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla"
     },
     {
       "userId": 1,
@@ -23,30 +17,6 @@
       "id": "4",
       "title": "eum et est occaecati",
       "body": "ullam et saepe reiciendis voluptatem adipisci sit amet autem assumenda provident rerum culpa quis hic commodi nesciunt rem tenetur doloremque ipsam iure quis sunt voluptatem rerum illo velit"
-    },
-    {
-      "id": "e607",
-      "title": "afdff",
-      "body": "jadjlkf",
-      "userId": 1
-    },
-    {
-      "id": "fdb3",
-      "title": "fada",
-      "body": "dfaf",
-      "userId": 1
-    },
-    {
-      "id": "5573",
-      "title": "afdsdf",
-      "body": "afdadfdf",
-      "userId": 1
-    },
-    {
-      "id": "1a3a",
-      "title": "jsdfhafklkllzvcxcvjrjg",
-      "body": "pkvbpvjbbndflngdfngndflng",
-      "userId": 1
     }
   ]
 }
